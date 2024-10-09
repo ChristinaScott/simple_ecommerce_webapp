@@ -44,5 +44,13 @@ def remove_from_cart(item_id):
     cart = [item for item in cart if item['id'] != item_id]  # Keep all items that don't match the ID
     return redirect(url_for('cart_view'))  # Redirect back to the cart view
 
+@app.route("/checkout", methods=["POST"])
+def checkout():
+    return render_template("error.html")
+
+@app.errorhandler(404)  # Customized error handling for 404
+def page_not_found(e):
+    return render_template('error.html'), 404
+
 if __name__ == "__main__":
     app.run(debug=True, host="127.0.0.1", port=5001)

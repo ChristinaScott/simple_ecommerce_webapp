@@ -3,7 +3,11 @@
 <h2>Your Cart</h2>
 <ul>
     {% for item in cart_items %}
-        <li>{{ item['name'] }} - ${{ item['price'] }}</li>
+        <li>
+            {{ item['name'] }} - ${{ item['price'] }}
+            <!-- Link to remove the item from the cart -->
+            <a href="{{ url_for('remove_from_cart', item_id=item['id']) }}" style="color:red;">Remove</a>
+        </li>
     {% endfor %}
 </ul>
 <p>Total items: {{ cart_items | length }}</p>

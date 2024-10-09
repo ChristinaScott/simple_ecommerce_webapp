@@ -36,5 +36,13 @@ def add_to_cart(product_id):
         cart.append(product)  # Add the product to the cart
     return redirect(url_for('cart_view'))
 
+# New route for removing an item from the cart
+@app.route("/remove_from_cart/<int:item_id>")
+def remove_from_cart(item_id):
+    global cart
+    # Remove the item with the matching ID from the cart
+    cart = [item for item in cart if item['id'] != item_id]  # Keep all items that don't match the ID
+    return redirect(url_for('cart_view'))  # Redirect back to the cart view
+
 if __name__ == "__main__":
     app.run(debug=True, host="127.0.0.1", port=5001)

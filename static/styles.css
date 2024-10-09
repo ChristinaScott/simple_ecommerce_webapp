@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #9e87c7;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #fff;
+    margin-top: 50px;
+    font-size: 2.5em;
+}
+
+form {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #6c63ff; /* Change border color on focus */
+    outline: none; /* Remove the default outline */
+}
+
+input[type="submit"] {
+    background-color: #6c63ff; /* Purple color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #5a54d2; /* Darker purple on hover */
+}
